@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>龙族漫画-龙族漫画大全与阅读指南</title>
+    <meta name="description" content="龙族漫画专题页面，详细介绍龙族漫画的故事背景、主要角色、世界观设定、阅读顺序、相关作品推荐及常见问题解答，帮助读者快速了解并找到适合自己的龙族漫画作品。">
+    <meta name="keywords" content="龙族漫画,龙族,漫画,龙族漫画大全,龙族漫画阅读,龙族漫画推荐,龙族漫画指南">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+            background-color: #f5f1e8;
+            color: #2d2a26;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 页眉区域 */
+        .site-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 18px 0;
+            border-bottom: 3px solid #c9a84c;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(145deg, #c9a84c, #a8863a);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #1a1a2e;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+        }
+        .logo-text {
+            color: #f0e6d2;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .logo-sub {
+            color: #c9a84c;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        .main-nav {
+            display: flex;
+            gap: 28px;
+        }
+        .main-nav a {
+            color: #e0d8cc;
+            text-decoration: none;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .main-nav a:hover {
+            color: #ffd700;
+            border-bottom-color: #c9a84c;
+        }
+
+        /* 首屏展示区 */
+        .hero-section {
+            background: linear-gradient(160deg, #0f3460 0%, #1a1a2e 60%, #2d1b4e 100%);
+            padding: 70px 0 80px;
+            color: #f5f1e8;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::after {
+            content: "";
+            position: absolute;
+            bottom: -40px;
+            right: -30px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+        .hero-text {
+            flex: 1 1 400px;
+        }
+        .hero-title {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            color: #ffd700;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.5);
+        }
+        .hero-desc {
+            font-size: 17px;
+            margin-bottom: 24px;
+            color: #dcd4c8;
+            max-width: 600px;
+        }
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        .badge {
+            background: rgba(201,168,76,0.15);
+            border: 1px solid #c9a84c;
+            color: #ffd700;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #c9a84c, #e0b860);
+            color: #1a1a2e;
+            padding: 12px 32px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 16px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(201,168,76,0.3);
+        }
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(201,168,76,0.5);
+        }
+        .hero-visual {
+            flex: 1 1 300px;
+            text-align: center;
+        }
+        .dragon-ring {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 3px dashed #c9a84c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            animation: rotate 30s linear infinite;
+            position: relative;
+        }
+        .dragon-ring-inner {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #2d4a7a, #16213e);
+            border: 2px solid #c9a84c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 72px;
+            color: #c9a84c;
+            animation: rotate 30s linear infinite reverse;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 内容区通用 */
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            position: relative;
+            padding-bottom: 12px;
+            color: #1a1a2e;
+        }
+        .section-title::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #c9a84c, #e0b860);
+            border-radius: 2px;
+        }
+        .section-subtitle {
+            color: #6b6359;
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+        .content-section {
+            padding: 60px 0;
+        }
+        .content-section:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        /* 卡片式布局 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+        .card {
+            background: #faf7f2;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #e8e0d4;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            border-color: #c9a84c;
+        }
+        .card-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1a1a2e;
+        }
+        .card-text {
+            font-size: 14px;
+            color: #5c564e;
+            line-height: 1.6;
+        }
+
+        /* 阅读指南步骤 */
+        .steps-list {
+            list-style: none;
+            counter-reset: step-counter;
+            margin-top: 20px;
+        }
+        .steps-list li {
+            counter-increment: step-counter;
+            position: relative;
+            padding: 16px 20px 16px 70px;
+            background: #faf7f2;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            border-left: 4px solid #c9a84c;
+            transition: background 0.3s;
+        }
+        .steps-list li:hover {
+            background: #f0ecdf;
+        }
+        .steps-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #c9a84c, #a8863a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #fff;
+            font-size: 16px;
+        }
+        .steps-list li h3 {
+            font-size: 17px;
+            margin-bottom: 4px;
+            color: #1a1a2e;
+        }
+        .steps-list li p {
+            font-size: 14px;
+            color: #5c564e;
+        }
+
+        /* 作品展示区域 */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .work-item {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid #eee5d8;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .work-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+        .work-cover {
+            height: 120px;
+            background: linear-gradient(135deg, #1a1a2e, #0f3460, #2d4a7a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #c9a84c;
+            position: relative;
+        }
+        .work-cover::before {
+            content: "🐉";
+            font-size: 56px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+        }
+        .work-info {
+            padding: 16px;
+        }
+        .work-name {
+            font-weight: 700;
+            font-size: 17px;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+        }
+        .work-desc {
+            font-size: 13px;
+            color: #6b6359;
+            line-height: 1.5;
+        }
+        .work-tag {
+            display: inline-block;
+            margin-top: 8px;
+            background: #f0ecdf;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #5c564e;
+        }
+
+        /* 世界观时间线 */
+        .timeline {
+            border-left: 3px solid #c9a84c;
+            margin-left: 20px;
+            padding-left: 24px;
+            margin-top: 20px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 24px;
+            padding: 16px 20px;
+            background: #faf7f2;
+            border-radius: 8px;
+            border: 1px solid #e8e0d4;
+        }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -33px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            background: #c9a84c;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 2px #c9a84c;
+        }
+        .timeline-item h3 {
+            font-size: 17px;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+        }
+        .timeline-item p {
+            font-size: 14px;
+            color: #5c564e;
+        }
+
+        /* FAQ */
+        .faq-list {
+            margin-top: 20px;
+        }
+        .faq-item {
+            margin-bottom: 12px;
+            border: 1px solid #e8e0d4;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .faq-question {
+            padding: 16px 20px;
+            background: #faf7f2;
+            font-weight: 600;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            color: #1a1a2e;
+            border-bottom: 1px solid transparent;
+            transition: background 0.3s;
+        }
+        .faq-question:hover {
+            background: #f0ecdf;
+        }
+        .faq-question::after {
+            content: "+";
+            font-size: 22px;
+            font-weight: 400;
+            color: #c9a84c;
+        }
+        .faq-answer {
+            padding: 16px 20px;
+            background: #fff;
+            font-size: 14px;
+            color: #5c564e;
+            line-height: 1.8;
+            border-top: 1px solid #eee5d8;
+        }
+
+        /* 页脚 */
+        .site-footer {
+            background: #1a1a2e;
+            color: #a8a29a;
+            padding: 40px 0 20px;
+            margin-top: 40px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        .footer-section {
+            flex: 1 1 200px;
+        }
+        .footer-section h4 {
+            color: #c9a84c;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+        .footer-section p, .footer-section a {
+            font-size: 14px;
+            color: #a8a29a;
+            text-decoration: none;
+            line-height: 1.8;
+            display: block;
+        }
+        .footer-section a:hover {
+            color: #ffd700;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 13px;
+            color: #777;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+            .main-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+            .hero-title {
+                font-size: 28px;
+            }
+            .hero-section {
+                padding: 40px 0 50px;
+            }
+            .section-title {
+                font-size: 24px;
+            }
+            .content-section {
+                padding: 40px 0;
+            }
+            .work-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 14px;
+            }
+            .logo-text {
+                font-size: 20px;
+            }
+            .hero-desc {
+                font-size: 15px;
+            }
+            .work-cover::before {
+                font-size: 44px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo-area">
+            <div class="logo-icon">🐉</div>
+            <div>
+                <div class="logo-text">龙族漫画</div>
+                <div class="logo-sub">DRAGON · 漫画世界</div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="#intro">漫画介绍</a>
+            <a href="#world">世界观</a>
+            <a href="#works">相关作品</a>
+            <a href="#guide">阅读指南</a>
+            <a href="#faq">常见问题</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- 首屏 -->
+    <section class="hero-section">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">龙族漫画</h1>
+                <p class="hero-desc">
+                    探索神秘宏大的龙族世界！这里为你汇聚龙族漫画的完整世界观、主要角色、阅读顺序与作品推荐，无论你是初次接触还是资深读者，都能找到所需的信息。
+                </p>
+                <div class="hero-badges">
+                    <span class="badge">奇幻冒险</span>
+                    <span class="badge">热血战斗</span>
+                    <span class="badge">龙族史诗</span>
+                    <span class="badge">青春成长</span>
+                </div>
+                <a href="#guide" class="hero-cta">开始阅读指南 →</a>
+            </div>
+            <div class="hero-visual">
+                <div class="dragon-ring">
+                    <div class="dragon-ring-inner">🐲</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 漫画介绍 -->
+    <section class="content-section" id="intro">
+        <div class="container">
+            <h2 class="section-title">什么是龙族漫画</h2>
+            <p class="section-subtitle">了解龙族题材漫画的核心设定与魅力所在</p>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">📖</div>
+                    <h3 class="card-title">故事背景</h3>
+                    <p class="card-text">龙族漫画通常以现代或架空世界为舞台，描绘隐藏于人类社会中的龙族后裔，他们拥有超乎常人的血统与能力，在现实与神秘的夹缝中展开冒险。</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3 class="card-title">核心主题</h3>
+                    <p class="card-text">作品往往围绕“血脉觉醒”“身份认同”“守护与牺牲”展开。主角常在普通人与龙族身份之间挣扎，寻找属于自己的道路与羁绊。</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🌍</div>
+                    <h3 class="card-title">题材风格</h3>
+                    <p class="card-text">既有热血的战斗场面，也有细腻的校园日常。画风多变，从精致写实到华丽幻想，满足不同读者的审美偏好。</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔥</div>
+                    <h3 class="card-title">读者群体</h3>
+                    <p class="card-text">适合喜欢奇幻冒险、热血成长、校园恋爱以及神秘组织设定的读者。故事节奏紧凑，人物塑造立体，极易沉浸其中。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 世界观设定 -->
+    <section class="content-section" id="world">
+        <div class="container">
+            <h2 class="section-title">龙族漫画世界观解析</h2>
+            <p class="section-subtitle">深入了解龙族漫画中独特的设定与力量体系</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>🐲 龙族血脉</h3>
+                    <p>龙族后裔在人类社会中隐匿生活，血脉浓度决定了其力量上限。觉醒者会获得龙翼、吐息等能力，但也被迫面对来自古老组织的追踪。</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>🗡️ 秘党与学院</h3>
+                    <p>许多龙族漫画中设有培养年轻龙族的秘密学院或组织，主角们在此学习控制能力、结识伙伴，并逐步揭开世界的真相。</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>⚔️ 敌对势力</h3>
+                    <p>追求纯血统治的激进派、觊觎龙族力量的猎龙者、以及立场不明的第三方势力，共同构成了主角团需要面对的复杂威胁。</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>🌙 命运抉择</h3>
+                    <p>随着剧情推进，主角往往面临关乎世界存亡的选择。友情、亲情与爱情交织，让每一次抉择都充满重量。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 相关作品推荐 -->
+    <section class="content-section" id="works">
+        <div class="container">
+            <h2 class="section-title">龙族漫画相关作品指南</h2>
+            <p class="section-subtitle">不同类型的龙族漫画各有魅力，以下分类助你快速定位喜好</p>
+            <div class="work-grid">
+                <div class="work-item">
+                    <div class="work-cover"></div>
+                    <div class="work-info">
+                        <div class="work-name">学院成长类</div>
+                        <div class="work-desc">以龙族学院为舞台，聚焦少年少女的成长、友谊与竞争，轻松热血兼具。</div>
+                        <span class="work-tag">推荐入门</span>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <div class="work-cover"></div>
+                    <div class="work-info">
+                        <div class="work-name">史诗冒险类</div>
+                        <div class="work-desc">宏大世界观，跨越地域的冒险旅程，龙族历史与人类命运交织。</div>
+                        <span class="work-tag">剧情党最爱</span>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <div class="work-cover"></div>
+                    <div class="work-info">
+                        <div class="work-name">都市幻想类</div>
+                        <div class="work-desc">现代都市背景下的龙族传说，将神秘融入日常，节奏明快。</div>
+                        <span class="work-tag">轻松阅读</span>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <div class="work-cover"></div>
+                    <div class="work-info">
+                        <div class="work-name">黑暗深沉类</div>
+                        <div class="work-desc">探讨血脉与人性，战斗残酷，剧情深刻，适合偏好成熟向的读者。</div>
+                        <span class="work-tag">深度向</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 阅读指南 -->
+    <section class="content-section" id="guide">
+        <div class="container">
+            <h2 class="section-title">龙族漫画阅读指南</h2>
+            <p class="section-subtitle">从零开始，轻松进入龙族漫画世界</p>
+            <ol class="steps-list">
+                <li>
+                    <h3>确定兴趣方向</h3>
+                    <p>先明确自己喜欢的题材侧重：是学院日常、热血战斗、悬疑剧情还是宏大史诗？这能帮你快速锁定最合适的作品。</p>
+                </li>
+                <li>
+                    <h3>寻找推荐书单</h3>
+                    <p>在漫画社区、论坛或书评网站搜索“龙族漫画推荐”等关键词，参考资深读者的评价和排序，建立初步阅读清单。</p>
+                </li>
+                <li>
+                    <h3>试读前几话</h3>
+                    <p>大多数平台支持免费试读。先阅读前几话感受画风、叙事节奏和人物是否合口味，再决定是否深入追更。</p>
+                </li>
+                <li>
+                    <h3>了解更新时间</h3>
+                    <p>关注作品的连载状态和更新时间，合理安排追更。完结作品可以一口气阅读，连载中作品则需要等待。</p>
+                </li>
+                <li>
+                    <h3>参与社区讨论</h3>
+                    <p>加入相关粉丝群或讨论区，分享心得、分析伏笔，能极大提升阅读乐趣，还能获得更多同类型好作品推荐。</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="content-section" id="faq">
+        <div class="container">
+            <h2 class="section-title">龙族漫画常见问题解答</h2>
+            <p class="section-subtitle">关于龙族漫画你可能想了解的一些问题</p>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">龙族漫画和小说有什么区别？</div>
+                    <div class="faq-answer">部分龙族漫画由小说改编而来，漫画在保留核心剧情的基础上，通过画面强化战斗表现和角色魅力，节奏通常更快，适合偏好视觉阅读的读者。两者各有特色，可以互为补充体验。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">龙族漫画适合什么年龄段的读者？</div>
+                    <div class="faq-answer">大部分龙族漫画面向青少年及以上读者，包含战斗场景和复杂情感。具体适合年龄因作品而异，建议家长根据具体作品的内容简介和分级信息进行判断。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">在哪里可以阅读龙族漫画？</div>
+                    <div class="faq-answer">正规漫画平台、出版社官方App以及部分杂志官网是主要阅读渠道。建议支持正版，以获得清晰画质和及时的更新，同时也支持创作者继续创作。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">龙族漫画有哪些经典角色设定？</div>
+                    <div class="faq-answer">常见的经典设定包括：身世成谜的混血主角、表面冷酷实则温柔的学长、活泼开朗的治愈系伙伴、亦正亦邪的神秘导师等。这些角色共同构成了丰富的故事网络。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何判断一部龙族漫画是否值得追？</div>
+                    <div class="faq-answer">可以先查看作品的评分和读者评论，注意提及较多的是优点还是缺点。另外试读前几话，如果画风、剧情、角色人设都让你产生兴趣，就值得继续追下去。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>龙族漫画</h4>
+                <p>专注分享龙族题材漫画资讯、作品推荐与深度解读，为喜爱奇幻冒险的你提供有价值的参考。</p>
+            </div>
+            <div class="footer-section">
+                <h4>快速导航</h4>
+                <a href="#intro">漫画介绍</a>
+                <a href="#world">世界观</a>
+                <a href="#works">相关作品</a>
+                <a href="#guide">阅读指南</a>
+                <a href="#faq">常见问题</a>
+            </div>
+            <div class="footer-section">
+                <h4>阅读提示</h4>
+                <p>请通过正规渠道阅读龙族漫画，尊重创作者劳动成果。适度阅读，享受健康娱乐生活。</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024 龙族漫画专题页 · 本页面仅供信息展示与交流使用</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // FAQ 交互：点击问题展示或隐藏答案
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var answer = this.nextElementSibling;
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                answer.style.display = 'block';
+                this.style.borderBottomColor = '#eee5d8';
+            } else {
+                answer.style.display = 'none';
+                this.style.borderBottomColor = 'transparent';
+            }
+        });
+        // 默认隐藏答案
+        var ans = q.nextElementSibling;
+        if (ans) {
+            ans.style.display = 'none';
+        }
+    });
+
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            var targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            var target = document.querySelector(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+  </html>
